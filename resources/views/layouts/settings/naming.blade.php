@@ -17,35 +17,47 @@
 <div class="row" style="padding-bottom:20px;">
   <div class="col-xs-12">
     <div class="wizard">
-      <a href="/settings/factfind"><span class="badge">1</span> Name your fact find</a>
-      <a  href="/settings/layout"><span class="badge">2</span> Set up your fact find questions</a>
-      <a href="/settings/design" ><span class="badge">3</span> Add your logo and design</a>
-      <a class="current"><span class="badge badge-inverse">4</span> Preview </a>
+      <a class="current"><span class="badge">1</span> Name your fact find</a>
+      <a href="/settings/layout"><span class="badge">2</span> Set up your fact find questions</a>
+      <a href="/settings/design"><span class="badge">3</span> Add your logo and design</a>
+      <a href="/settings/preview"><span class="badge badge-inverse">4</span> Preview </a>
   </div>
   </div>
 </div>
 
 
-
 <div class="col-xs-12">
-  <h1>Preview</h1>
+  <h1>Fact Find Questions</h1>
   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
 <hr>
 </div>
 
 
 
+<div class="form-group">
+  <label for="">Name your fact find</label>
+  <input type="text" class="form-control" id="" placeholder="My first fact find">
+
+</div>
+
+<br/>
 
 
-  <a href="/home" class="btn btn-default pull-right">Save and Continue </a>
+
+<a href="/settings/layout" class="btn btn-default pull-right">Save and Continue </a>
+
+
+
+
 
 <!-- end container -->
 </div>
 
-
 @endsection
 
 @push('javascript')
+
+
 
 
 

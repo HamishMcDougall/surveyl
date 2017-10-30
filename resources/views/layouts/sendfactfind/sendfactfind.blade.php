@@ -52,6 +52,17 @@
   </div>
 
 
+    <div class="col-xs-12">
+        Select fact find sections <br>
+          <select class="selectpicker" multiple>
+          <option>Section 1</option>
+          <option>Section 2</option>
+          <option>Section 3</option>
+        </select>
+      </div>
+
+
+
   <div class="col-xs-12">
 
     <p>Select send date</p>
@@ -62,7 +73,7 @@
 
 
 
-  <a href="/home" class="btn btn-default pull-right">Save and Continue </a>
+  <a href="/home" onclick="window.open('/clientlogin')"; class="btn btn-default pull-right">Save and Continue </a>
 
 
 
@@ -76,9 +87,21 @@
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+
+
+
+
 
 <script>
 $('.date').datepicker({

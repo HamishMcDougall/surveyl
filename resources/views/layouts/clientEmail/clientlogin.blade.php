@@ -49,13 +49,13 @@
                                     Login
                                 </button>
 
-                            
+
                             </div>
                         </div>
 
                 </div>
             </div>
         </div>
-    </div>
+
 </div>
 @endsection

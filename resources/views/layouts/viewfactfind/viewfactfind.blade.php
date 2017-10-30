@@ -93,6 +93,7 @@
 
 
 
+
           </div>
         </div>
       </aside>
@@ -108,12 +109,19 @@
         <button id="undo"  class="btn btn-default btn-sm">Undo</button>
         <button id="redo"  class="btn btn-default btn-sm">Redo</button>
         <button id="keyboard" class="btn btn-default btn-sm" onclick="myObjectReset.toggleKeyboard()">Keyboard</button>
-        <button id="trash" class="btn btn-default btn-sm">Upload Document</button>
+        <button id="trash" onclick="myObjectReset.togglePhoto()" class="btn btn-default btn-sm">Take Photo</button>
         <button id="undo"  class="btn btn-default btn-sm">Note Pad</button>
       </div>
 
     <br/>
       <div class="keyboardImg" style="display:none;"><img src="{{ url('/') }}/image/keyboard-letter.png" width="100%"></div>
+
+  <div class="togglePhoto" style="display:none;">
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="snap">Take Photo</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
+  </div>
+
     <div id="ink-paper"></div>
     <br/>
 
@@ -241,9 +249,12 @@
                   toggleKeyboard:function(){
                     console.log('keyboardtoggle');
                     $(".keyboardImg").toggle();
-                  }
+                  },
+                  togglePhoto:function(){
+                    console.log('keyboardtoggle');
+                    $(".togglePhoto").toggle();
 
-
+                    }
                   }
 
               /*  var languages = document.getElementById('languages');
@@ -269,8 +280,32 @@
         })();
     </script>
 
-    <!-- Scripts  -->
+    <!-- Scripts Video  -->
+<script>
 
+// Grab elements, create settings, etc.
+var video = document.getElementById('video');
+
+// Get access to the camera!
+if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // Not adding `{ audio: true }` since we only want video now
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+        video.src = window.URL.createObjectURL(stream);
+        video.play();
+    });
+}
+
+// Elements for taking the snapshot
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var video = document.getElementById('video');
+
+// Trigger photo take
+document.getElementById("snap").addEventListener("click", function() {
+	context.drawImage(video, 0, 0, 640, 480);
+});
+
+</script>
 
 
 @endpush

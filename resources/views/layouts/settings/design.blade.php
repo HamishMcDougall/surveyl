@@ -17,10 +17,10 @@
 <div class="row" style="padding-bottom:20px;">
   <div class="col-xs-12">
     <div class="wizard">
-      <a href="/settings/layout"><span class="badge">1</span> Set up your fact find questions</a>
-      <a class="current"><span class="badge">2</span> Add your logo and design</a>
-      <a href="/settings/preview"><span class="badge badge-inverse">3</span> Preview</a>
-  </div>
+      <a href="/settings/factfind"><span class="badge">1</span> Name your fact find</a>
+      <a href="/settings/layout"><span class="badge">2</span> Set up your fact find questions</a>
+      <a class="current"><span class="badge">3</span> Add your logo and design</a>
+      <a href="/settings/preview"><span class="badge badge-inverse">4</span> Preview </a>
   </div>
 </div>
 

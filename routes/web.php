@@ -25,6 +25,12 @@ Route::get('/firsttime', function () {
 });
 
 
+/* actions routes */
+
+Route::get('/settings/factfind', function () {
+    return view('layouts.settings.naming');
+});
+
 Route::get('/settings/layout', function () {
     return view('layouts.settings.layout');
 });
@@ -38,6 +44,9 @@ Route::get('/settings/preview', function () {
     return view('layouts.settings.preview');
 });
 
+
+/* actions routes */
+
 Route::get('/newclient', function () {
     return view('layouts.newClient.newClient');
 });
@@ -48,6 +57,9 @@ Route::get('/newclient', function () {
 Route::get('/sendfactfind', function () {
     return view('layouts.sendfactfind.sendfactfind');
 });
+
+/* view client name */
+
 
 Route::get('/view/clientname', function () {
     return view('layouts.viewfactfind.viewfactfind');

@@ -45,27 +45,30 @@
           <div class="tab-content">
             <div id="clients" class="tab-pane fade in active">
               <!-- client tab -->
-                <div class="row">
-                  <div class="col-xs-5">
-                    <strong>Name</strong>
-                  </div>
-                  <div class="col-xs-2">
-                    <strong>Date</strong>
-                  </div>
-                  <div class="col-xs-2">
-                   <strong>Actions</strong>
-                  </div>
-                  <div class="col-xs-2">
-                   <strong>Status</strong>
-                  </div>
+              <div class="row">
+                <div class="col-xs-3">
+                  <strong>Name</strong>
                 </div>
+                <div class="col-xs-3">
+                  <strong>Email</strong>
+                </div>
+                <div class="col-xs-2">
+                  <strong>D.O.B</strong>
+                </div>
+                <div class="col-xs-2">
+                 <strong>Actions</strong>
+                </div>
+                <div class="col-xs-2">
+                 <strong>Status</strong>
+                </div>
+              </div>
 
                 <div class="row">
                   <div class="col-xs-12">
                     <div class="">
                       <h3>Welcome</h3>
                       <p>Get started by creating your first fact find. We’ll walk you through the entire process.</p>
-                      <a href="/settings/layout" class="btn btn-default">Start </a>
+                      <a href="/settings/factfind" class="btn btn-default">Start </a>
 
                     </div>
                 </div>
@@ -79,17 +82,20 @@
               <!-- completed tab -->
 
               <div class="row">
-                <div class="col-xs-5">
+                <div class="col-xs-3">
                   <strong>Name</strong>
                 </div>
+                <div class="col-xs-3">
+                  <strong>Email</strong>
+                </div>
                 <div class="col-xs-2">
-                  <strong>Date</strong>
+                  <strong>D.O.B</strong>
                 </div>
                 <div class="col-xs-2">
                  <strong>Actions</strong>
                 </div>
                 <div class="col-xs-2">
-                 <strong>Completed</strong>
+                 <strong>Status</strong>
                 </div>
               </div>
 
@@ -98,7 +104,7 @@
                     <div class="">
                       <h3>Welcome</h3>
                       <p>Get started by creating your first fact find. We’ll walk you through the entire process.</p>
-                      <a href="/settings/layout" class="btn btn-default">Start </a>
+                      <a href="/settings/factfind" class="btn btn-default">Start </a>
                     </div>
                 </div>
               </div>
