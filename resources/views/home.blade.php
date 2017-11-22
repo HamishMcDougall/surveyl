@@ -2,6 +2,10 @@
 
 @section('content')
 
+
+
+
+
 <div class="container">
 
   <!-- take it out of here and create a partal over the top https://www.w3schools.com/howto/howto_js_snackbar.asp -->
@@ -65,7 +69,7 @@
 
                 <div class="row">
                   <div class="col-xs-3">
-                    <a href="#">Joe Smith</a>
+                    <a href="/view/clientname">Joe Smith</a>
                   </div>
                   <div class="col-xs-3">
                     JoeSmith@gmail.com
@@ -87,7 +91,7 @@
 
                 <div class="row">
                   <div class="col-xs-3">
-                    <a href="#">Richard Jones</a>
+                    <a href="/view/clientname">Richard Jones</a>
                   </div>
 
                   <div class="col-xs-3">
@@ -134,7 +138,7 @@
 
               <div class="row">
                 <div class="col-xs-3">
-                <a href="#">Hamish McDougall</a>
+                <a href="/view/clientname">Hamish McDougall</a>
                 </div>
                 <div class="col-xs-3">
                   hamish.mcdougall@tal.com.au
@@ -164,6 +168,10 @@
       <!-- setting -->
   <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  <a href="/settings/layout">Settings</a>
 <!-- end container -->
+
+
+
+
 </div>
 
 @endsection

@@ -15,6 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/statuses', 'StatusController@index');
+
+ Route::get('/statuses', 'StatusController@index');
+
+
+
+
+
+Route::resource('/task', 'TaskController');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -31,9 +43,11 @@ Route::get('/settings/factfind', function () {
     return view('layouts.settings.naming');
 });
 
-Route::get('/settings/layout', function () {
-    return view('layouts.settings.layout');
-});
+
+Route::get('/settings/layout', 'FactFindSetupController@index');
+
+
+
 
 Route::get('/settings/design', function () {
     return view('layouts.settings.design');
