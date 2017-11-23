@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "bootstrap-colorpicker": "^2.5.2",
-    "survey-vue": "^0.12.32"
+    "survey-vue": "^0.12.32",
+    "vuedraggable": "^2.15.0"
   }
 }

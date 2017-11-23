@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\User;
 use App\Status;
 use Illuminate\Http\Request;
 
 class StatusController extends Controller
 {
+
+  public function __construct()
+     {
+         $this->middleware('auth');
+     }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,17 @@ class StatusController extends Controller
      */
     public function index()
     {
-        return Status::with('user')->latest()->get();
+      //  $Userid = Auth::id();
+
+
+      //  return Status::all();
+       //return Status::with('user')->latest()->get();
+    return Status::where(['user_id' => Auth::user()->id])
+       ->orderBy('sort_order', 'asc')
+       ->get();
+
+
+      //return Status::where(['user_id'=>$Userid])->latest()->get();
     }
 
     /**
@@ -41,8 +57,10 @@ class StatusController extends Controller
         //validation
         $this->validate($request, ['body'=>'required']);
 
+        $Userid = Auth::id();
+
         // create the Store
-        $status = App\User::find(2)
+        $status = User::find($Userid)
             ->statuses()
             ->create($request->only(['body']));
 
@@ -52,6 +70,8 @@ class StatusController extends Controller
 
 
     }
+
+
 
     /**
      * Display the specified resource.
@@ -84,7 +104,26 @@ class StatusController extends Controller
      */
     public function update(Request $request, Status $status)
     {
-        //
+
+      $data = $request->passData;
+
+      foreach ($data as $key => $value) {
+
+    $sortOrder = Status::find($data[$key]['id'])
+       ->update([
+         'sort_order' => $key,
+       ]);
+      print_r($data[$key]['id']);
+      print_r($data[$key]['body']);
+      print_r($data[$key]['sort_order']);
+     };
+
+
+
+
+
+
+
     }
 
     /**

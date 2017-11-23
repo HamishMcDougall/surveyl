@@ -1,3 +1,6 @@
+import Form from './utilities/Form';
+window.Form = Form;
+
 
 window._ = require('lodash');
 

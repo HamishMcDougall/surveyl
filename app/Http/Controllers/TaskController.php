@@ -27,7 +27,7 @@ class TaskController extends Controller
     {
         $tasks = Task::where(['user_id' => Auth::user()->id])->get();
         return response()->json([
-            'tasks'    => $tasks,
+            'statuses'    => $statuses,
         ], 200);
     }
 

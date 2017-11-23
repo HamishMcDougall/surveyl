@@ -8,6 +8,8 @@ class Status extends Model
 {
     //
 
+    protected $guarded = [];
+
 
     public function user()
     {

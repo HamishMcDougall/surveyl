@@ -18,9 +18,9 @@ Route::get('/', function () {
 
 Route::get('/statuses', 'StatusController@index');
 
- Route::get('/statuses', 'StatusController@index');
+ Route::post('/statuses', 'StatusController@store');
 
-
+ Route::patch('/statuses', 'StatusController@update');
 
 
 
