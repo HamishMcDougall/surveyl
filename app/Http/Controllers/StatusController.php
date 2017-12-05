@@ -6,6 +6,7 @@ use Auth;
 use App\User;
 use App\Status;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StatusController extends Controller
 {
@@ -57,12 +58,24 @@ class StatusController extends Controller
         //validation
         $this->validate($request, ['body'=>'required']);
 
+
+        // find the user id
         $Userid = Auth::id();
+
+
+        // cound and add a sort order
+        $sortOrderNumber = User::count();
+        $sortOrderNumber = $sortOrderNumber + 1;
+
 
         // create the Store
         $status = User::find($Userid)
             ->statuses()
-            ->create($request->only(['body']));
+            ->create([
+                'body'        => request('body'),
+                'sort_order' => $sortOrderNumber
+            ]);
+
 
 
         //return it, and inclue the user.
@@ -134,6 +147,8 @@ class StatusController extends Controller
      */
     public function destroy(Status $status)
     {
-        //
+
+
+        $deletedRows = Status::where('id', $deleteId)->delete();
     }
 }

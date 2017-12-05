@@ -15,10 +15,19 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import VueRouter from 'vue-router';
+import draggable from 'vuedraggable';
+
+Vue.use(VueRouter);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 //Vue.component('example-component', require('./components/Task.vue'));
 
+
+import router from './routes';
+
+
 const app = new Vue({
-    el: '#vueApp'
+    el: '#vueApp',
+    router
 });

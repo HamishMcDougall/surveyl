@@ -1,23 +1,17 @@
 <template>
 
-
-
     <div class="panel ">
-        <div class="panel  panel-heading">
-          Push to the Stream...
-
-        </div>
 
         <div class="panel-body">
           <form @submit.prevent="onSubmit">
-              <textarea class="form-control" placeholder="I have something to say" v-model="form.body" ></textarea>
-<p
-  v-if="form.errors.has('body')"
-  v-text="form.errors.get('body')"
-  >
-</p>
-
-          <button type="submit" class="btn btn-primary" name="button">Submit</button>
+              <input class="form-control" placeholder="Section Name" v-model="form.body" ></input>
+        <p
+          v-if="form.errors.has('body')"
+          v-text="form.errors.get('body')"
+          >
+        </p>
+          
+            <button type="submit" class="btn btn-default" name="button">+ Add Section</button>
               </form>
         </div>
 

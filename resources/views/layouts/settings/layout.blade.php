@@ -35,9 +35,7 @@
 
 
 
-<div id="vueApp">
-    <example-component></example-component>
-</div>
+
 
 
 <div class="row">
@@ -45,67 +43,14 @@
 
 
 
-  <div class="col-xs-4">
 
-    <ul class="nav nav-pills nav-stacked">
-
-
-@foreach ($FactfindSections as $Section)
-      <li role="presentation" class="active"><a href="#"><span class="glyphicon glyphicon-move " aria-hidden="true"></span> {{$Section->Section}}<span class="glyphicon glyphicon-trash pull-right" aria-hidden="true"> </span></a></li>
-@endforeach
-
-
-    </ul>
-
-<!-- think i should use vue js here -->
-
-
-    <button type="button" class="btn btn-default" name="button">+ Add Blank Section</button>
+    <div id="vueApp">
+        <example-component></example-component>
+    </div>
 
 
 
-  </div>
 
-  <div class="col-xs-8">
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3>General Info</h3>
-          <!-- headding -->
-        </div>
-        <!-- body -->
-        <div class="panel-body">
-          <div class="line-hr">  </div>
-          <div class="center-block col-xs-1" style="float: none;"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></div>
-            <div class="form-group">
-              <label >Q1. This is the first question</label> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-              <input type="text"  name="" class="form-control" value="Answer here">
-            </div>
-        <div class="pull-right">
-        <span class="glyphicon glyphicon-trash " aria-hidden="true"></span>
-      </div>
-
-
-          <div class="line-hr"></div>
-          <div class="center-block col-xs-1" style="float: none;"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></div>
-            <div class="form-group">
-              <label >Q2. This is the second question</label> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-              <input type="text"  name="" class="form-control" value="Answer here">
-            </div>
-              <div class="pull-right">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-              </div>
-
-
-        </div>
-      <!-- end of panel -->
-      </div>
-<!-- end col-8-->
-
-<a href="/settings/design" class="btn btn-default pull-right">Save and Continue </a>
-
-
-</div>
 
 <!-- end row -->
 </div>
