@@ -96,7 +96,9 @@
             <div class="content">
 
 
-                <!-- Jumbotron -->
+<img src="{{ asset('img/homepage.jpg') }}" alt="" width="100%">
+
+                <!-- Jumbotron
 
               <div class="jumbotron">
                   <div class="container">
@@ -108,8 +110,7 @@
                   </div>
                 </div>
 
-                <!-- proof points -->
-                <!-- Example row of columns -->
+
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
@@ -131,7 +132,6 @@
 
 
 
-      <!-- Example row of columns -->
       <div class="row">
         <div class="col-sm-4">
           <h2>Data validation</h2>
@@ -155,8 +155,9 @@
   <div class="footer">Powered by TAL</div>
 
 
+-->
 
-
+</div>
 
     </body>
 </html>
