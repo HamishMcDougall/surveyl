@@ -43,7 +43,7 @@
 
             <div class="col-xs-12" style="padding-bottom:30px;">
                 <div class="btn-group btn-block ">
-                  <a class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown" href="#">Section<span class="caret"></span></a>
+                  <a class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown" href="#">Goals and Objectives<span class="caret"></span></a>
                   <ul class="dropdown-menu btn-block">
 
                   <li class="list-group-item"> <a href="">Section Title</a></li>
@@ -71,14 +71,38 @@
 
                 <div class="panel-body">
                   <div class="form-group">
-                    <label for="">Question</label>
+                    <label for="">What is the main reason you are seeking advice ?</label>
                     <input type="text" class="form-control" id="" placeholder="Answer">
                   </div>
 
                   <div class="form-group">
-                    <label for="">Question</label>
+                    <label for="">Describe your short term objectives</label>
                     <input type="text" class="form-control" id="" placeholder="Answer">
                   </div>
+
+
+                  <div class="form-group">
+                    <label for="">Describe your long term objectives</label>
+                    <input type="text" class="form-control" id="" placeholder="Answer">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="">Scope of Advice</label>
+                    <input type="text" class="form-control" id="" placeholder="Answer">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="">What have you done to ensure you are able to meet your objectivs?</label>
+                    <input type="text" class="form-control" id="" placeholder="Answer">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="">Are you aware of any significant risks that may impact your life goals?</label>
+                    <input type="text" class="form-control" id="" placeholder="Answer">
+                  </div>
+
+
+
                 </div>
 
 
@@ -91,7 +115,11 @@
             </form>
             </div>
 
+<div id="questions">
 
+<p>Questions Id</p>
+
+</div>
 
 
           </div>

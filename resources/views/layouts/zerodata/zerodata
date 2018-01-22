@@ -1,0 +1,116 @@
+<!-- take it out of here and create a partal over the top https://www.w3schools.com/howto/howto_js_snackbar.asp
+
+@if(Session::has('flash_message'))
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  {!! session('flash_message') !!}
+</div>
+
+@endif
+
+
+<h2>Welcome, Hamish McDougall</h2>
+<div class="btn-group btn-group-sm paddingBase">
+  <a href="/factfind" class="btn btn-default btn-block">New Client</a>
+</div>
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <!-- search -->
+        <div class="row">
+          <div class="col-xs-12 centerText">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2" >
+              <span class="input-group-addon" id="basic-addon2">Search</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- body -->
+      <div class="panel-body">
+
+
+        <ul class="nav nav-tabs nav-justified">
+          <li class="active"><a data-toggle="pill" href="#clients">Clients <span class="badge">0</span></a></li>
+          <li><a data-toggle="pill" href="#completed">Completed <span class="badge badge-success">0</span></a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="clients" class="tab-pane fade in active">
+            <!-- client tab -->
+            <div class="row">
+              <div class="col-xs-3">
+                <strong>Name</strong>
+              </div>
+              <div class="col-xs-3">
+                <strong>Email</strong>
+              </div>
+              <div class="col-xs-2">
+                <strong>D.O.B</strong>
+              </div>
+              <div class="col-xs-2">
+               <strong>Actions</strong>
+              </div>
+              <div class="col-xs-2">
+               <strong>Status</strong>
+              </div>
+            </div>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="">
+                    <h3>Welcome</h3>
+                    <p>Get started by creating your first fact find. We’ll walk you through the entire process.</p>
+                    <a href="/settings/factfind" class="btn btn-default">Start </a>
+
+                  </div>
+              </div>
+
+              </div>
+
+
+              <!-- client tab -->
+          </div>
+          <div id="completed" class="tab-pane fade">
+            <!-- completed tab -->
+
+            <div class="row">
+              <div class="col-xs-3">
+                <strong>Name</strong>
+              </div>
+              <div class="col-xs-3">
+                <strong>Email</strong>
+              </div>
+              <div class="col-xs-2">
+                <strong>D.O.B</strong>
+              </div>
+              <div class="col-xs-2">
+               <strong>Actions</strong>
+              </div>
+              <div class="col-xs-2">
+               <strong>Status</strong>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                  <div class="">
+                    <h3>Welcome</h3>
+                    <p>Get started by creating your first fact find. We’ll walk you through the entire process.</p>
+                    <a href="/settings/factfind" class="btn btn-default">Start </a>
+                  </div>
+              </div>
+            </div>
+            <!-- completed tab -->
+          </div>
+
+        </div>
+
+      </div>
+    <!-- end of panel -->
+    </div>
+
+    <!-- setting -->
+  <a href="/settings/layout">Settings</a>
+<!-- end container -->

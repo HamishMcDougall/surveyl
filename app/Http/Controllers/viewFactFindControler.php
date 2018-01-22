@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\FactFindSections;
+
+use Auth;
+use App\Task;
+
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-class FactFindSetupController extends Controller
+
+class viewFactFindControler extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,14 +19,23 @@ class FactFindSetupController extends Controller
      */
     public function index()
     {
+        //
 
-      $FactfindSections = DB::table('fact_find_sections')
-      ->get();
+      //  $user = Auth::user();
+        //$user->posts()->saveMany($posts);
+
+        //$user->load('posts');
+        //return view ('questions', $user);
+
+      //  return $user;
+        //dd($user->posts);
+
+     $questions = DB::table('questions')->get();
+
+      //return $users;
+      return view('layouts.viewfactfind.viewfactfind', compact('questions'));
 
 
-
-
-        return view('layouts.settings.layout', compact('FactfindSections'));
 
     }
 

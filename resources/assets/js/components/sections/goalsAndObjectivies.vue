@@ -1,35 +1,40 @@
 <template>
 
-<div class="backgroundSection">
-<h3>{{sectionHeading.heading}}</h3>
+<div>
 
-<draggable :list="sectionQuestions" >
-  <div class="panel panel-default" v-for="(questions,index) in sectionQuestions" key="questions.id">
-    <div class="panel-heading">
-      <h3 class="panel-title"> {{questions.title}}</h3>
-    </div>
-    <div class="panel-body">
-      <div v-if="questions.type === 'text'">
-        <input type="text" class="form-control" v-model="questions.answer" >
-      </div>
+  <h3>{{sectionQuestions.questionSection}}</h3>
 
-<!-- work out how to make this into a checkbox -->
-
-         <div v-if="questions.type === 'checkbox'">
-           <p v-for="options in questions.options ">
-             <input
-             type='checkbox'
-             :value="options"
-             v-model='questions.answer'> {{options}}
-         </p>
-         <p v-model:"questions.answer">{{questions.answer}}</p>
-
-          </div>
+<ul class="list-group">
 
 
-    </div>
-  </div>
-</draggable>
+  <draggable :list="sectionQuestions.questionsText" >
+          <li v-for="(Question, index) in sectionQuestions.questionsText"
+          v-bind:key="Question.id"
+          class="list-group-item"
+          >
+          <!-- remove it from the vue array
+           <button v-on:click="sectionQuestions.questionsText.splice(index, 1)">X</button>-->
+
+            {{Question.question}}
+
+
+            <div v-for="(Option, index) in Question.options.qoptions">
+
+                    <input
+                    id="checkbox"
+                      type="checkbox"
+                      :value="Option"
+                    >{{Option}}<br>
+            </div>
+
+
+              <!--  <p @click="deleteItem(index)" id="thisisid">Delete {{status.id}}</p> <router-link :to="`${Questions.id}`" exact >       </router-link>-->
+
+          </li>
+
+        </draggable>
+
+      </ul>
 
 </div>
 
@@ -49,66 +54,28 @@ export default {
      draggable
 
   },
+  created(){
+    axios.get('/settings/layout/1')
+      .then(response => {
+        this.sectionQuestions = response.data
+        for(var i = 0; i<this.sectionQuestions.questionsText.length; i++){
+          var question = this.sectionQuestions.questionsText[i];
+          //overwriting the string data with the array
+          question.options = JSON.parse(question.options)
+          console.log(question);
+        }
+      });
+        console.log('Component created.', this.sectionQuestions)
+  },
+    mounted() {
+        console.log('Component mounted.')
+    },
 
 data(){
   return{
-    sectionHeading:{
-      heading:"Goals And Objectivies"
-    },
-    sectionQuestions:[
-      {
-          title:"What is the main reason you are seeking advice ?",
-          type:'text',
-          answer:["Answer here"],
-          sort_order:0
-      },
-      {
-          title:"Describe your short term objectives",
-          type:'text',
-          answer:["Answer here"],
-          sort_order:1
-      },
-      {
-          title:"Describe your long term objectives",
-          type:'text',
-          answer:["Answer here"],
-          sort_order:2
-      },
-      {
-          title:"Scope of Advice",
-          type:'checkbox',
-          options:[
-            "Wealth Creation",
-            "Personal Risk Insurance",
-            "Retirement Planning",
-            "Superannuation",
-            "Social Security & Aged Care",
-            "Investment",
-            "Other"
-          ],
-          answer:[],
-          sort_order:3
-      },
-      {
-          title:"Scope of Advice",
-          type:'text',
-          answer:["Answer here"],
-          sort_order:4
-      },
-      {
-          title:"What have you done to ensure you are able to meet your objectivs?",
-          type:'text',
-          answer:["Answer here"],
-          sort_order:5
-      },
-    {
-          title:"Are you aware of any significant risks that may impact your life goals?",
-          type:'text',
-          answer:["Answer here"],
-          sort_order:6
-
-      }
-    ]
+    sectionQuestions:
+    [
+      ]
   }
 }
 

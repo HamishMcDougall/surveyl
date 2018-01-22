@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Auth;
-
 use App\Task;
+
+
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 ;
 
@@ -25,10 +27,21 @@ class TaskController extends Controller
      */
      public function index()
     {
-        $tasks = Task::where(['user_id' => Auth::user()->id])->get();
-        return response()->json([
-            'statuses'    => $statuses,
-        ], 200);
+
+      /**
+*        $tasks = Task::where(['user_id' => Auth::user()->id])->get();
+*        return response()->json([
+*            'statuses'    => $statuses,
+*        ], 200);
+
+*/
+
+
+   $users = DB::table('tasks')->get();
+
+   return $users;
+
+
     }
 
     /**

@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 let routes =[
 
   {
-    path: '/Goals and Objectivies',
+    path: '/1',
     component: require('./components/sections/goalsAndObjectivies.vue')
   }
 
@@ -14,7 +14,8 @@ let routes =[
 
 export default new VueRouter({
 
-  routes
+  routes,
+//  mode: 'history'
 //  linkActiveClass:'active'
 
 });

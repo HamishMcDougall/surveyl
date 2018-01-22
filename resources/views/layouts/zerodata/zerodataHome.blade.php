@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="container">
+<div>
 
-  <!-- take it out of here and create a partal over the top https://www.w3schools.com/howto/howto_js_snackbar.asp -->
+  <!-- take it out of here and create a partal over the top https://www.w3schools.com/howto/howto_js_snackbar.asp
 
   @if(Session::has('flash_message'))
   <div class="alert alert-success alert-dismissible" role="alert">
@@ -119,7 +119,9 @@
 
       <!-- setting -->
     <a href="/settings/layout">Settings</a>
-<!-- end container -->
+  <!-- end container -->
+
+
 </div>
 
 @endsection

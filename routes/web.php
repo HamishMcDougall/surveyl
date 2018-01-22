@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,7 +36,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/firsttime', function () {
-    return view('layouts.zerodata.zerodataHome');
+      return view('layouts.zerodata.zerodataHome');
 });
 
 
@@ -46,6 +49,18 @@ Route::get('/settings/factfind', function () {
 
 Route::get('/settings/layout', 'FactFindSetupController@index');
 
+
+Route::get('/settings/layout/{section}', function($section){
+
+  $data['questionSection'] = App\Status::find($section)->body;
+  $data['questionsText']= App\Status::find($section)->questions->all();
+
+return $data;
+
+//  return $questionsText->with(compact('questionsText', 'questionSection'));
+
+
+});
 
 
 
@@ -75,9 +90,7 @@ Route::get('/sendfactfind', function () {
 /* view client name */
 
 
-Route::get('/view/clientname', function () {
-    return view('layouts.viewfactfind.viewfactfind');
-});
+Route::get('/view/clientname', 'viewFactFindControler@index');
 
 
 /* client factfind */
@@ -88,4 +101,14 @@ Route::get('/clientlogin', function () {
 
 Route::get('/clientfactfind', function () {
     return view('layouts.clientEmail.clientFactFind');
+});
+
+
+Route::get('/testing/{section}', function($section){
+
+  $questionSection = App\Status::find($section)->body;
+  $questions = App\Status::find($section)->questions;
+
+  return [$questions, $questionSection];
+
 });

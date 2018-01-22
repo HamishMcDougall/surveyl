@@ -5,7 +5,7 @@
             <ul class="list-group">
                 <draggable @update="updateDBorder" :list="statuses" >
                       <li v-for="(status,index) in statuses" class="list-group-item">
-                                  <router-link :to="status.body" exact >
+                                  <router-link :to="`${status.id}`" exact >
                         {{status.body}}
                           <!--  <p @click="deleteItem(index)" id="thisisid">Delete {{status.id}}</p>-->
                             </router-link>
@@ -58,7 +58,7 @@
       created(){
         axios.get('/statuses')
           .then(response => this.statuses = response.data);
-            console.log('Component created.')
+            console.log('Component created.', this.statuses)
       },
         mounted() {
             console.log('Component mounted.')
@@ -72,7 +72,6 @@
         deleteItem:function(index) {
             this.statuses.splice(index, 1);
             var  passData = this.statuses;
-
         },
         addStatus(status){
           this.statuses.unshift(status);
